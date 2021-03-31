@@ -21,81 +21,10 @@ window.onload = (() => {
     let imageStone = document.getElementById('stone');
     let imageTree = document.getElementById('tree');
 
-    // context.drawImage(imageClay, 0, 0);
+    let pattern;
 
-    imageClay.onload(() => {
-        let pattern = context.createPattern(imageTree, 'repeat');
-        context.fillStyle = pattern;
-    });
-
-
-
-
-    
-
-    context.beginPath();
-    context.arc(100, 100, 100, 0, Math.PI*2);
-    context.stroke();
-    context.fill();
-
-    console.log("boom");
-    console.log(pattern);
-    console.log(context.fillStyle);
-
-
-
-    // const imageClay = new Image();
-    // const imageHay = new Image();
-    // const imagePasture = new Image();
-    // const imageStone = new Image();
-    // const imageTree = new Image();
-
-    // imageClay.src = './Images/clay.png';
-    // imageHay.src = './Images/hay.png';
-    // imagePasture.src = './Images/pasture.png';
-    // imageStone.src = './Images/stone.png';
-    // imageTree.src = './Images/tree.png';
-
-    // imageClay.onload = (() => {
-    //     patternClay = context.createPattern(imageClay, 'no-repeat');
-    // });
-    // imageHay.onload = (() => {
-    //     patternHay = context.createPattern(imageHay, 'no-repeat');
-    // });
-    // imagePasture.onload = (() => {
-    //     patternPasture = context.createPattern(imagePasture, 'no-repeat');
-    // });
-    // imageStone.onload = (() => {
-    //     patternStone = context.createPattern(imageStone, 'no-repeat');
-    // });
-    // imageTree.onload = (() => {
-    //     patternTree = context.createPattern(imageTree, 'no-repeat');
-    // });
-
-
-
-    // var pattern;
-    // let imageYellow = new Image();
-    // imageYellow.src = './Images/test.png';
-    // imageYellow.onload = (() => {
-    //     pattern =  context.createPattern(imageYellow, 'repeat');
-    //     context.fillStyle = pattern;
-    //     console.log(pattern);
-    //     console.log(context.fillStyle);
-    //     // context.drawImage(imageYellow, 0, 0);
-    //     context.beginPath();
-    //     context.arc(100, 100, 100, 0, Math.PI*2);
-    //     context.stroke();
-    //     context.fill();
-    // })
-    // context.beginPath();
-    // context.arc(100, 100, 200, 0, Math.PI*2);
-    // context.stroke();
-    // context.fill();
-
-    
-
-    
+    pattern =  context.createPattern(imageStone, 'repeat');
+    context.fillStyle = pattern;
 
     const hexDraw = (centerX, centerY, size) => {
         context.beginPath();
@@ -107,7 +36,7 @@ window.onload = (() => {
         context.lineTo(size/2 + centerX, factor*size + centerY);
         context.closePath();
         context.stroke();
-        context.fillStyle = pattern;
+        //context.fillStyle = pattern;
         context.fill();
 
     }
