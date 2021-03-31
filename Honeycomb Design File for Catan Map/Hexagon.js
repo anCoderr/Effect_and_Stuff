@@ -21,47 +21,47 @@ window.onload = (() => {
     let imageStone = document.getElementById('stone');
     let imageTree = document.getElementById('tree');
 
-    let patternClay = context.createPattern(imageClay, 'repeat-y');
+    let patternClay = context.createPattern(imageClay, 'repeat');
     let patternHay = context.createPattern(imageHay, 'repeat');
     let patternPasture = context.createPattern(imagePasture, 'repeat');
     let patternStone = context.createPattern(imageStone, 'repeat');
     let patternTree = context.createPattern(imageTree, 'repeat');
 
     
-    context.fillStyle = patternClay;
-    context.beginPath();
-    context.arc(100, 100, 100, 0, Math.PI*2);
-    context.closePath();
-    context.stroke();
-    context.fill();
+    // context.fillStyle = patternClay;
+    // context.beginPath();
+    // context.arc(100, 100, 100, 0, Math.PI*2);
+    // context.closePath();
+    // context.stroke();
+    // context.fill();
 
-    context.fillStyle = patternHay;
-    context.beginPath();
-    context.arc(300, 100, 100, 0, Math.PI*2);
-    context.closePath();
-    context.stroke();
-    context.fill();
+    // context.fillStyle = patternHay;
+    // context.beginPath();
+    // context.arc(300, 100, 100, 0, Math.PI*2);
+    // context.closePath();
+    // context.stroke();
+    // context.fill();
 
-    context.fillStyle = patternHay;
-    context.beginPath();
-    context.arc(100, 300, 100, 0, Math.PI*2);
-    context.closePath();
-    context.stroke();
-    context.fill();
+    // context.fillStyle = patternHay;
+    // context.beginPath();
+    // context.arc(100, 300, 100, 0, Math.PI*2);
+    // context.closePath();
+    // context.stroke();
+    // context.fill();
 
-    context.fillStyle = patternClay;
-    context.beginPath();
-    context.arc(300, 300, 100, 0, Math.PI*2);
-    context.closePath();
-    context.stroke();
-    context.fill();
+    // context.fillStyle = patternClay;
+    // context.beginPath();
+    // context.arc(300, 300, 100, 0, Math.PI*2);
+    // context.closePath();
+    // context.stroke();
+    // context.fill();
 
-    context.fillStyle = patternHay;
-    context.beginPath();
-    context.arc(200, 200, 100, 0, Math.PI*2);
-    context.closePath();
-    context.stroke();
-    context.fill();
+    // context.fillStyle = patternHay;
+    // context.beginPath();
+    // context.arc(200, 200, 100, 0, Math.PI*2);
+    // context.closePath();
+    // context.stroke();
+    // context.fill();
 
     const hexDraw = (centerX, centerY, size) => {
         context.beginPath();
@@ -73,11 +73,17 @@ window.onload = (() => {
         context.lineTo(size/2 + centerX, factor*size + centerY);
         context.closePath();
         context.stroke();
-        //context.fill();
+        // context.fill();
         
     }
 
-    context.drawImage(imageClay, absoluteCenterX - 2*distX - 30, absoluteCenterY + 2*distY - 30, 60, 60)
+    //context.drawImage(imageClay, absoluteCenterX - 180, absoluteCenterY - 155);
+
+    // context.drawImage(imageClay, absoluteCenterX, absoluteCenterY);
+    
+    context.drawImage(imageClay, 0, 0, 360, 310, absoluteCenterX - size, absoluteCenterY - factor*size, 2*size, 2*factor*size);
+
+    //context.drawImage(imageClay, 0, 0, imageClay.width, imageClay.height, absoluteCenterX, absoluteCenterY, 2*size, 2*factor*size);
 
     const col1Draw = () => {
         hexDraw(absoluteCenterX - 2*distX, absoluteCenterY + 2*distY, size);
@@ -108,7 +114,7 @@ window.onload = (() => {
         hexDraw(absoluteCenterX + 2*distX, absoluteCenterY, size);
         hexDraw(absoluteCenterX + 2*distX, absoluteCenterY - 2*distY, size);
     };
-    
+
     col1Draw();
     col2Draw();
     col3Draw();
