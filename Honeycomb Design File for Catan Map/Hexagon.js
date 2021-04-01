@@ -1,14 +1,14 @@
 window.onload = (() => {
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
+    canvas.width = window.innerHeight;
     canvas.height = window.innerHeight;
     context.imageSmoothingEnabled = false;
     context.strokeStyle = "black";
     context.clearRect(0, 0, canvas.width, canvas.height); 
     const factor = 0.866;
     const padding = 5;
-    const size = 60;
+    const size = 145;
     const distY = (2*factor*size+padding)/2;
     const distX = (3*size + factor*2*padding)/2;
 
@@ -30,7 +30,7 @@ window.onload = (() => {
     // let patternStone = context.createPattern(imageStone, 'repeat');
     // let patternTree = context.createPattern(imageTree, 'repeat');
 
-    const  drawTileImage = (imageName, centerX, centerY) => {
+    const  drawOnTile = (imageName, centerX, centerY) => {
         context.drawImage(imageName, 0, 0, imageName.width, imageName.height, centerX - size, centerY - factor*size, 2*size, 2*factor*size);
     }
 
@@ -45,7 +45,7 @@ window.onload = (() => {
         context.closePath();
         context.stroke();
         // context.fill();
-        drawTileImage(imageClay, centerX, centerY);
+        drawOnTile(imageClay, centerX, centerY);
     }
 
     const col1Draw = () => {
@@ -77,11 +77,9 @@ window.onload = (() => {
         hexDraw(absoluteCenterX + 2*distX, absoluteCenterY, size);
         hexDraw(absoluteCenterX + 2*distX, absoluteCenterY - 2*distY, size);
     };
-
     col1Draw();
     col2Draw();
     col3Draw();
     col4Draw();
     col5Draw();
-
 });
