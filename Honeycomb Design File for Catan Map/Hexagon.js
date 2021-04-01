@@ -30,7 +30,7 @@ window.onload = (() => {
     // let patternStone = context.createPattern(imageStone, 'repeat');
     // let patternTree = context.createPattern(imageTree, 'repeat');
 
-    const  drawTile = (imageName, centerX, centerY) => {
+    const  drawOnTile = (imageName, centerX, centerY) => {
         context.drawImage(imageName, 0, 0, imageName.width, imageName.height, centerX - size, centerY - factor*size, 2*size, 2*factor*size);
     }
 
@@ -45,7 +45,7 @@ window.onload = (() => {
         context.closePath();
         context.stroke();
         // context.fill();
-        drawTile(imageClay, centerX, centerY);
+        drawOnTile(imageClay, centerX, centerY);
     }
 
     const col1Draw = () => {
